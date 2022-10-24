@@ -499,12 +499,6 @@ function initField() {
                     .attr('xlink:href', d => `#${getBloomInstanceId(d)}`)
                     .attr('transform', d => `scale(${bloomScale(d)})`)
             },
-            function(update) {
-                console.log(update)
-                update.transition()
-                    .duration(config.transition)
-                    .style('transform', getFlowerCoordTransform)
-            }
         )
 
     svg.append('path')
