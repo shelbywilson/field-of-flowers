@@ -5,7 +5,7 @@ Welcome to a sortable garden!
 
 ## Flowers 
 
-These flowers are randomly generated and drawn on page load. 
+These flowers are randomly generated and drawn on page load, using d3 to define SVG elements and position. 
 
 ## Sorting 
 
