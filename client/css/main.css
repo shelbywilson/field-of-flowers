@@ -16,55 +16,18 @@ html, body {
 }
 h1 {
     margin: 2rem;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 400;
-    text-align: right;
+    text-align: center;
     letter-spacing: 0.02em;
-}
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-.sorting {
-    position: fixed;
-    left: 0;
-    top: 0;
-    border: 1px solid var(--text);
-    margin: var(--padding);
-    background: rgba(0, 29, 10, 0.5);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-}
-.sorting button {
-    box-sizing: content-box;
-    padding: calc(var(--padding) * 0.5);
-    width: 2.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
-    font-size: 1.75rem;
-    color: var(--accent);
-    background: rgba(255, 255, 255, 0);
-    border: none;
-    cursor: pointer;
-}
-.sorting .flex-column {
-    padding: 0 var(--padding) var(--padding) var(--padding);
-}
-.sorting fieldset:last-child {
-    margin-top: var(--padding);
-}
-.sorting.collapse form {
-    display: none;
 }
 main {
     margin-top: 10rem;
     padding: 0 2rem 1rem 2rem;
+    min-height: calc(100vh - 10rem);
+}
+footer {
+    margin: 4rem 0;
 }
 form, fieldset {
     border: none;
@@ -87,6 +50,9 @@ select {
     width: 100%;
     border: none;
 }
+input {
+    margin: 0 calc(var(--padding) * 0.5) 0 0;
+}
 input[type="range"] {
     width: 100%;
 }
@@ -96,33 +62,94 @@ label {
 select:focus {
     outline: none;
 }
-.select-container, .input-container {
-    min-height: 2.825rem;
+svg {
+    overflow: visible;
 }
-.select-container.active select {
-    opacity: 1;
+svg .leaf {
+    opacity: 0.8;
+    fill: var(--stem);
 }
-.select-container.focus {
-    border: 1px solid var(--accent);
+svg .sort-path-display {
+    fill: none;
+    stroke-width: 2;
+    stroke: var(--accent);
 }
-.select-container.focus:after {
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+.hidden {
+    display: none;
+}
+.sr-only {
+    position: absolute;
+    left: -100vw;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.sort-dialog {
+    color: var(--color);
+    padding: 0;
+}
+.toggle-sort-dialog {
+    box-sizing: content-box;
+    padding: calc(var(--padding) * 0.5);
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.75rem;
     color: var(--accent);
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+.sort-dialog, .open-sort-dialog {
+    border-radius: 20px;
+    border: 1px solid var(--text);
+    background: rgba(0, 29, 10, 0.5);
+    backdrop-filter: blur(5px);
+    margin: var(--padding);
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.sort-dialog .flex-column {
+    padding: 0 var(--padding) var(--padding) var(--padding);
+}
+.sort-dialog fieldset:last-child {
+    margin-top: var(--padding);
 }
 .input-container {
-    padding: calc(var(--padding) * 0.5) var(--padding);
-}
-input {
-    margin: 0 calc(var(--padding) * 0.5) 0 0;
-}
-.select-container, .input-container {
+    min-height: 2.825rem;
     border: 1px solid var(--text);
     background: var(--background);
     position: relative;
     width: 100%;
     border-radius: 10px;
+    padding: calc(var(--padding) * 0.5) var(--padding);
 }
-.select-container:not(:last-child), .input-container:not(:last-child) {
+.input-container.focus {
+    border: 1px solid var(--accent);
+}
+.input-container.focus:after {
+    color: var(--accent);
+}
+.input-container:not(:last-child) {
     margin-right: 1.5rem;
+}
+.select-container {
+    padding: 0;
+}
+.select-container.active select {
+    opacity: 1;
 }
 .select-container:after {
     content: '\00273F';
@@ -139,9 +166,7 @@ input {
 
 @media (max-width: 700px) {
     h1 {
-        margin: 7rem 2rem;
-        font-size: 2rem;
-        text-align: center;
+        font-size: 1.5rem;
     }
     main {
         padding: 0 0 1rem 0;
@@ -154,10 +179,10 @@ input {
         display: flex;
         flex-direction: column;
     }
-    .sorting fieldset:last-child {
+    .sort-dialog fieldset:last-child {
         margin-top: 1rem;
     }
-    .select-container:not(:last-child), .input-container:not(:last-child) {
+    .input-container:not(:last-child) {
         margin-right: 0;
         margin-bottom: 1rem;
     }

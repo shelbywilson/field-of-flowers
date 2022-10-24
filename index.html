@@ -12,25 +12,29 @@
         <meta name="theme-color" content="rgb(0, 29, 10)">
         <link rel="icon" type="image" href="./client/img/favicon.png">
         <link href="./client/css/main.css" rel="stylesheet" />
-        <link href="./client/css/svg.css" rel="stylesheet" />
         <script src="./client/d3/d3.min.js"></script>
-        <script src="./client/main.js"></script>
+        <script type="module" src="./client/main.js"></script>
         <title>&#x273F; field of flowers &#x273F;</title>
     </head>
     <body>
         <header>
-            <h1>
-                &#x273F; field of flowers &#x273F;
-            </h1>
-            <div class="sorting collapse" id="sorting">
-                <div>
-                    <button type="button" id="toggle-view-sort">
-                        &#x273F;
-                    </button>
-                </div>
+            <button type="button" class="toggle-sort-dialog open-sort-dialog" id="open-sort-dialog">
+                ✿
+            </button>
+            <p class="sr-only">A sortable field of flowers.</p>
+        </header>
+        <main>
+            <dialog class="sort-dialog" id="sort-dialog" aria-labelledby="sort-dialog-label">
+                <button type="button" class="toggle-sort-dialog close-sort-dialog" id="close-sort-dialog">
+                    &#x25CF;
+                </button>
+                <p id="sort-dialog-label" class="sr-only">Select sort attributes and layout options.</p>
                 <form class="flex-column">
                     <fieldset class="flex-row m-flex-column"> 
-                        <div class="select-container">
+                        <legend class="sr-only">
+                            Ordered sort selections
+                        </legend>
+                        <div class="input-container select-container">
                             <select id="sort-1">
                                 <option disabled value="" selected>select sort</option>
                                 <option value="color">color</option>
@@ -40,7 +44,7 @@
                                 <option value="stem_size">stem height</option>
                             </select>
                         </div>
-                        <div class="select-container">
+                        <div class="input-container select-container">
                             <select id="sort-2">
                                 <option disabled value="" selected>select sort</option>
                                 <option value="color">color</option>
@@ -50,7 +54,7 @@
                                 <option value="stem_size">stem height</option>
                             </select>
                         </div>
-                        <div class="select-container">
+                        <div class="input-container select-container">
                             <select id="sort-3">
                                 <option disabled value="" selected>select sort</option>
                                 <option value="color">color</option>
@@ -62,8 +66,14 @@
                         </div>
                     </fieldset>
                     <fieldset class="flex-row m-flex-column">
+                        <legend class="sr-only">
+                            Layout options
+                        </legend>
                         <div class="input-container">
                             <input type="range" min="5" max="100" value="25" step="5" id="zoom" />
+                            <label class="sr-only" for="zoom">
+                                Flower scale input
+                            </label>
                         </div>
                         <div class="input-container flex-row">
                             <div class="flex-row">
@@ -87,9 +97,7 @@
                         </div>
                     </fieldset>
                 </form>
-            </div>
-        </header>
-        <main>
+            </dialog>
             <div id="field">
                 <svg>
                     <defs>
@@ -132,5 +140,10 @@
                 </svg>
             </div>
         </main>
+        <footer>
+            <h1>
+                &#x273F; field of flowers &#x273F;
+            </h1>
+        </footer>
     </body>
 </html>
