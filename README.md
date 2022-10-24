@@ -9,9 +9,10 @@ These flowers are randomly generated and drawn on page load.
 
 ## Sorting 
 
-Sorting is hierarchical based on selected attributes. Attributes are compared in order until a difference is found.
+Sorting is hierarchical based on selected attributes. Attributes are compared in order until a difference is found. Use slider to rescale field.
 
 ## Layouts 
+
 ### 1. Linear
 <img width="1673" alt="flowers sorted linearly" src="https://user-images.githubusercontent.com/5523024/197474034-f68fbd7a-65e8-4f9d-bea1-716f2ae50c1d.png">
 
