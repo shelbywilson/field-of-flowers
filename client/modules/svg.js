@@ -292,7 +292,7 @@ function getHilbertFlowerCoord(i) {
 }
 
 /**
- * Returns transform style of flower
+ * Position and scale flower
  * 
  * @param {Flower} d
  * @param {number} i
