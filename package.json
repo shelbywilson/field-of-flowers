@@ -1,0 +1,25 @@
+{
+  "name": "flower-field",
+  "version": "1.0.0",
+  "description": "sortable field of flowers",
+  "main": "client/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shelbywilson/field-of-flowers.git"
+  },
+  "keywords": [
+    "d3"
+  ],
+  "author": "Shelby Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shelbywilson/field-of-flowers/issues"
+  },
+  "homepage": "https://github.com/shelbywilson/field-of-flowers#readme",
+  "dependencies": {
+    "d3": "^7.6.1"
+  }
+}

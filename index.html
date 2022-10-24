@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta http-equiv="Content-Type"content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
+        <meta property="og:title" content="&#x273F; field of flowers &#x273F;" />
+        <meta property="og:url" content="https://shelby.cool/field-of-flowers" />
+        <meta property="og:image" content="./client/img/preview.png" />
+        <meta name="theme-color" content="violet">
+        <link rel="icon" type="image" href="./client/img/favicon.png">
+        <link href="./client/css/main.css" rel="stylesheet" />
+        <link href="./client/css/svg.css" rel="stylesheet" />
+        <script src="./client/d3/d3.min.js"></script>
+        <script src="./client/main.js"></script>
+        <title>&#x273F; field of flowers &#x273F;</title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                &#x273F; field of flowers &#x273F;
+            </h1>
+            <div class="sorting collapse" id="sorting">
+                <div>
+                    <button type="button" id="toggle-view-sort">
+                        &#x273F;
+                    </button>
+                </div>
+                <form class="flex-column">
+                    <fieldset class="flex-row m-flex-column"> 
+                        <div class="select-container">
+                            <select id="sort-1">
+                                <option disabled value="" selected>select sort</option>
+                                <option value="color">color</option>
+                                <option value="petal_num">number of petals</option>
+                                <option value="leaf_num">number of leaves</option>
+                                <option value="petal_r">petal length</option>
+                                <option value="stem_size">stem height</option>
+                            </select>
+                        </div>
+                        <div class="select-container">
+                            <select id="sort-2">
+                                <option disabled value="" selected>select sort</option>
+                                <option value="color">color</option>
+                                <option value="petal_num">number of petals</option>
+                                <option value="leaf_num">number of leaves</option>
+                                <option value="petal_r">petal length</option>
+                                <option value="stem_size">stem height</option>
+                            </select>
+                        </div>
+                        <div class="select-container">
+                            <select id="sort-3">
+                                <option disabled value="" selected>select sort</option>
+                                <option value="color">color</option>
+                                <option value="petal_num">number of petals</option>
+                                <option value="leaf_num">number of leaves</option>
+                                <option value="petal_r">petal length</option>
+                                <option value="stem_size">stem height</option>
+                            </select>
+                        </div>
+                    </fieldset>
+                    <fieldset class="flex-row m-flex-column">
+                        <div class="input-container">
+                            <input type="range" min="5" max="100" value="25" step="5" id="zoom" />
+                        </div>
+                        <div class="input-container flex-row">
+                            <div class="flex-row">
+                                <input name="layout" type="radio" value="hilbert" id="is-hilbert" />
+                                <label for="is-hilbert">
+                                    hilbert
+                                </label>
+                            </div>
+                            <div class="flex-row">
+                                <input name="layout" type="radio" value="linear" checked id="is-linear"/>
+                                <label for="is-linear">
+                                    linear
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <label>
+                                <input type="checkbox" id="toggle-sort-path" />
+                                view sort path
+                            </label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </header>
+        <main>
+            <div id="field">
+                <svg>
+                    <defs>
+                        <radialGradient id="gradient-def-0" cx="70%">
+                            <stop stop-color="black" offset="0%" />
+                            <stop stop-color="darkred" offset="30%" />
+                            <stop stop-color="orangered" offset="100%"/>
+                        </radialGradient>
+                        <radialGradient id="gradient-def-1" cx="70%">
+                            <stop stop-color="firebrick" offset="0%"/>
+                            <stop stop-color="darkorchid" offset="100%"/>
+                        </radialGradient>
+                        <radialGradient id="gradient-def-2" cx="80%">
+                            <stop stop-color="plum" offset="20%"/>
+                            <stop stop-color="mediumslateblue" offset="100%"/>
+                        </radialGradient>
+                        <radialGradient id="gradient-def-3" cx="90%">
+                            <stop stop-color="darkorange" offset="10%"/>
+                            <stop stop-color="brown" offset="20%"/>
+                            <stop stop-color="gold" offset="100%"/>
+                        </radialGradient> 
+                        <radialGradient id="gradient-def-4" cx="70%">
+                            <stop stop-color="hotpink" offset="0%" />
+                            <stop stop-color="pink" offset="80%"/>
+                        </radialGradient>
+                        <linearGradient id="gradient-def-5">
+                            <stop stop-color="#2500ff" offset="0%"/>
+                            <stop stop-color="midnightblue" offset="80%"/>
+                            <stop stop-color="bisque" offset="100%"/>
+                        </linearGradient>
+                        <linearGradient id="gradient-def-6">
+                            <stop stop-color="white" offset="50%"/>
+                            <stop stop-color="darkorange" offset="100%"/>
+                        </linearGradient>
+                    </defs>
+                    <g id="instances" class="hidden">
+                        <path id="leaf" class="leaf" d="M0 16 C0 16 0 0 16 0 C16 0 16 16 0 16"></path>
+                        <path id="leaf-flip" class="leaf" d="M16 16 C16 16 16 0 0 0 C0 0 0 16 16 16"></path>
+                    </g>
+                </svg>
+            </div>
+        </main>
+    </body>
+</html>
