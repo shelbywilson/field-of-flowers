@@ -39,7 +39,11 @@ function init() {
         radios[i].addEventListener('change', () => update())
     }
 
-    window.addEventListener('resize', () => update(0));
+    window.addEventListener('resize', () => {
+        if (!isSmallScreen()) {
+            update(0)
+        }
+    });
 
     document.getElementById('toggle-view-sort').addEventListener('click', (e) => toggleViewSort(e))
 
