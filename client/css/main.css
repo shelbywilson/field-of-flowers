@@ -29,6 +29,17 @@ main {
 footer {
     margin: 4rem 0;
 }
+footer p {
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+    color: var(--text);
+}
+footer a:hover {
+    text-decoration: none;
+    color: var(--accent);
+}
 form, fieldset {
     border: none;
     margin: 0;
