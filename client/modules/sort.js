@@ -1,5 +1,5 @@
 
-import('./flower_data.js').Flower;
+import('./typedefs.js').Flower;
 import * as flower_data from './flower_data.js';
 
 /**

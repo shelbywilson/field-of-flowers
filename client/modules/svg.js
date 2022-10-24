@@ -1,4 +1,5 @@
-import('./flower_data.js').Flower;
+import('./typedefs.js').Flower;
+import('./typedefs.js').Coord;
 
 import { config } from './config.js';
 import { sortFlowers } from './sort.js';
@@ -6,11 +7,6 @@ import * as layout from './layout.js';
 import * as flower_data from './flower_data.js';
 import * as hilbert from './hilbert.js';
 
-/**
- * @typedef {Object} Coord
- * @property {number} x 
- * @property {number} y 
- */
 
 /**
  * Initialize SVG

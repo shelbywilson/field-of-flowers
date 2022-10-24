@@ -1,4 +1,4 @@
-import('./svg.js').Coord;
+import('./typedefs.js').Coord;
 import { config } from './config.js';
 import * as layout from './layout.js';
 
