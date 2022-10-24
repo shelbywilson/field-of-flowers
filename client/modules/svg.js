@@ -84,7 +84,7 @@ function initField() {
 }
 
 /**
- * Update SVG
+ * Update flower positions and sort path
  * 
  */
 export function update(transition = config.transition) {
@@ -147,7 +147,7 @@ function scaleSvg() {
 }
 
 /**
- * Generate randomized array of flowers
+ * Returns scale of flower bloom
  * 
  * @param {Flower} d
  * @return {number} 
@@ -157,7 +157,7 @@ function getBloomScale(d) {
 }
 
 /**
- * Append ellipse (petal) to flower bloom
+ * Append and position petal to flower bloom
  * 
  * @param {Flower} d
  * @param {number} i
@@ -224,7 +224,7 @@ function getBloomInstanceId(d) {
 }
 
 /**
- * Append flower bloom
+ * Draw flower blooms
  * 
  * @param {Flower} d
  */
