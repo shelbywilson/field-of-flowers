@@ -6,8 +6,13 @@ import * as svg from './svg.js';
  * 
  */
 export function init() {
-    const inputs = document.querySelectorAll('select, input');
+    window.addEventListener('resize', () => {
+        if (!layout.isSmallScreen()) {
+            svg.update(0)
+        }
+    });
 
+    const inputs = document.querySelectorAll('select, input:not(.toggle-sort-direction-checkbox)');
     for (let i = 0; i < inputs.length; i += 1) {
         inputs[i].addEventListener('change', (e) => {
             event.target.closest(".input-container").classList.add('active');
@@ -21,11 +26,10 @@ export function init() {
         })
     }
 
-    window.addEventListener('resize', () => {
-        if (!layout.isSmallScreen()) {
-            svg.update(0)
-        }
-    });
+    const toggleSortDirections = document.querySelectorAll('.toggle-sort-direction-checkbox');
+    for (let i = 0; i < toggleSortDirections.length; i += 1) {
+        toggleSortDirections[i].addEventListener('change', () => svg.update());
+    }
 
     document.getElementById('open-sort-dialog').addEventListener('click', () => openSortDialog());
 

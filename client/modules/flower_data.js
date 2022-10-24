@@ -16,16 +16,16 @@ import { config } from './config.js';
  */
 
 export let flowers = [];
-export let max_petal_r = 0;
+export let maxPetalR = 0;
 
 /**
- * Set flowers and max_petal_r
+ * Set flowers and maxPetalR
  * 
  */
 export function init() {
     const arr = getFlowerData();
 
-    max_petal_r = d3.max(arr, d => d.petal_r);
+    maxPetalR = d3.max(arr, d => d.petal_r);
     flowers = arr;
 }
 

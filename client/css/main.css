@@ -46,7 +46,7 @@ form, fieldset {
     padding: 0;
 }
 fieldset {
-    width: 42rem;
+    width: 48rem;
     max-width: calc(100vw - (var(--padding) * 4));
 }
 select {
@@ -95,6 +95,9 @@ svg .sort-path-display {
     display: flex;
     flex-direction: column;
 }
+.space-between {
+    justify-content: space-between;
+}
 .hidden {
     display: none;
 }
@@ -138,6 +141,9 @@ svg .sort-path-display {
 .sort-dialog fieldset:last-child {
     margin-top: var(--padding);
 }
+fieldset .flex-row {
+    width: 100%;
+}
 .input-container {
     min-height: 2.825rem;
     border: 1px solid var(--text);
@@ -153,11 +159,15 @@ svg .sort-path-display {
 .input-container.focus:after {
     color: var(--accent);
 }
-.input-container:not(:last-child) {
-    margin-right: 1.5rem;
+.sorting-options fieldset > .flex-row:not(:last-child) {
+    margin-left: var(--padding);
+}
+.layout-options .input-container {
+    margin-right: 4rem;
 }
 .select-container {
     padding: 0;
+    margin-right: 0;
 }
 .select-container.active select {
     opacity: 1;
@@ -173,6 +183,27 @@ svg .sort-path-display {
     color: var(--color);
     padding: calc(var(--padding) * 0.5) calc(var(--padding) * 0.75);
     pointer-events: none;
+}
+.toggle-sort-direction {
+    width: 1rem;
+    padding: var(--padding);
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+.toggle-sort-direction:hover {
+    color: var(--accent);
+}
+.toggle-sort-direction input[type="checkbox"] {
+    display: none;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+.toggle-sort-direction input[type="checkbox"] ~ span:before {
+    content: '\002191';
+}
+.toggle-sort-direction input[type="checkbox"]:checked ~ span:before {
+    content: '\002193';
 }
 
 @media (max-width: 700px) {
@@ -193,7 +224,7 @@ svg .sort-path-display {
     .sort-dialog fieldset:last-child {
         margin-top: 1rem;
     }
-    .input-container:not(:last-child) {
+    .input-container {
         margin-right: 0;
         margin-bottom: 1rem;
     }

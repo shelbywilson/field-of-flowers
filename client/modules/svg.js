@@ -157,7 +157,7 @@ function scaleSvg() {
  * @return {number} 
  */
 function getBloomScale(d) {
-    return d.petal_r/flower_data.max_petal_r;
+    return d.petal_r/flower_data.maxPetalR;
 }
 
 /**
@@ -233,7 +233,7 @@ function getBloomInstanceId(d) {
  * @param {Flower} d
  */
 function appendBloomInstance(d) {
-    d.petal_r = flower_data.max_petal_r;
+    d.petal_r = flower_data.maxPetalR;
 
     const bloom = d3.select('#instances')
         .append('g')

@@ -1,7 +1,6 @@
 
 import('./flower_data.js').Flower;
 import * as flower_data from './flower_data.js';
-import * as layout from './layout.js';
 
 /**
  * Hierarchical sorting function. 
@@ -12,14 +11,16 @@ import * as layout from './layout.js';
  * @return {number}
  */
 export function sortFlowers(a, b) {
-    const sortValues = layout.sortSelections().map(key => {
+    const multipliers = sortDirections();
+
+    const sortValues = sortSelections().map((key, i) => {
         if (key === 'petal_r') {
             const aR = flower_data.getMaxR(a);
             const bR = flower_data.getMaxR(b);
             
-            return bR - aR;
+            return (bR - aR) * multipliers[i];
         }
-        return b[key] - a[key]
+        return (b[key] - a[key]) * multipliers[i]
     })
 
     if (sortValues.length === 0) {
@@ -31,4 +32,41 @@ export function sortFlowers(a, b) {
         i += 1
     }
     return sortValues[i] || 0;
+}
+
+/**
+ * Returns values of sort select elements.
+ * 
+ * @return {Array.<string>} 
+ */
+export function sortSelections() {
+    const selects = document.getElementsByTagName('select');
+    const values = [];
+
+    for (let i = 0; i < selects.length; i += 1) {
+        if (selects[i].value) {
+            values.push(selects[i].value)
+        }
+    }
+
+    return values;
+}
+
+/**
+ * Returns values of sort directions only for sort elements with selections. 
+ * 
+ * @return {Array.<boolean>} 
+ */
+export function sortDirections() {
+    const checkboxes = document.querySelectorAll('.toggle-sort-direction-checkbox');
+    const selects = document.getElementsByTagName('select');
+    const values = [];
+
+    for (let i = 0; i < checkboxes.length; i += 1) {
+        if (selects[i].value) {
+            values.push(checkboxes[i].checked ? -1 : 1)
+        }
+    }
+
+    return values;
 }

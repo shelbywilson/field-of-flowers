@@ -84,21 +84,3 @@ export function isSmallScreen() {
 export function isSortPathVisible() {
     return document.getElementById('toggle-sort-path').checked;
 }
-
-/**
- * Returns values of sort select elements
- * 
- * @return {array} 
- */
-export function sortSelections() {
-    const selects = document.getElementsByTagName('select');
-    const values = [];
-
-    for (let i = 0; i < selects.length; i += 1) {
-        if (selects[i].value) {
-            values.push(selects[i].value)
-        }
-    }
-
-    return values;
-}
