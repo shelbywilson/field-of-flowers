@@ -296,6 +296,10 @@ function scaleSvg(transition = config.transition) {
 
 
 function update(transition = config.transition) {
+    if (isSmallScreen()) {
+        transition = 0;
+    }
+
     scaleSvg(transition);
 
     d3.select('.sort-path')
