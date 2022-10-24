@@ -1,3 +1,4 @@
+import('./svg.js').Coord;
 import { config } from './config.js';
 import * as layout from './layout.js';
 
@@ -29,7 +30,7 @@ export function getPathCommands() {
 /**
  * Converts 1D index to 2D coordinates along Hilbert curve
  * 
- * @return {Array.<{x: number, y: number}>} 
+ * @return {Array.<Coord>} 
  */
 function getPathCoord(index) {
     const order = config.hilbert_order;
