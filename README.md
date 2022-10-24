@@ -9,7 +9,7 @@ These flowers are randomly generated and drawn on page load.
 
 ## Sorting 
 
-Sorting is hierarchical based on selected attributes. Attributes are compared in order until a difference is found. Use slider to rescale field.
+Sorting is hierarchical based on selected attributes and sort direction. Attributes are compared in order until a difference between flowers is found. Use slider to rescale field.
 
 ## Layouts 
 
