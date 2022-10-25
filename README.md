@@ -16,12 +16,12 @@ Sorting is hierarchical based on selected attributes and sort direction. Attribu
 ### 1. Linear
 <img width="1673" alt="flowers sorted linearly" src="https://user-images.githubusercontent.com/5523024/197474034-f68fbd7a-65e8-4f9d-bea1-716f2ae50c1d.png">
 
-Flowers are arranged in order from left to right, wrapping to next row as needed. This mode is useful when comparing stem size or number of leaves. 
+Flowers are arranged in order from left to right, wrapping to the next row as needed. This mode is useful when comparing stem size or number of leaves. 
 
 ### 2. Hilbert curve
 <img width="1413" alt="flowers sorted along a Hilbert curve" src="https://user-images.githubusercontent.com/5523024/197622141-f500d0f4-e30c-440a-b6fa-356e9028553c.png">
 
-Uses a Hilbert curve (https://en.wikipedia.org/wiki/Hilbert_curve) to map items from a 1-dimensional array to 2-dimensional space, so that similar items are close in proximity. Conversely, sorting linearly by row could cause visual breaks in groups as they wrap from one line to the next. This mode is useful when sorting by color or flower size, grouping visually similar flowers together. 
+This uses a Hilbert curve (https://en.wikipedia.org/wiki/Hilbert_curve) to map items from a 1-dimensional array to 2-dimensional space, so that similar items are close in proximity. Conversely, sorting linearly by row could cause visual breaks in groups as they wrap from one line to the next. This mode is useful when sorting by color or flower size, grouping visually similar flowers together. 
 
 Optionally, toggle sort path:
 
