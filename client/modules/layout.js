@@ -14,7 +14,7 @@ export function flowerScale() {
 }
 
 /**
- * Returns number of rows, i.e. number of flowers per row
+ * Returns number of rows, i.e. number of flowers per col
  * 
  * @return {number} 
  */
